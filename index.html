@@ -6,12 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
     </head>
-    <body class="body">
-        <header class="header">
+    <body>
+        <header>
             <h1>WISE</h1>
         </header>
 
-        <nav class="navigation">
+        <nav>
             <ul>
                 <li><a href="index.html">Control Panel</a></li> <!-- control panel showing task list, avatar, pet, spotify player, time, date, weather, progress bar for daily tasks, activity log, and a cute little awards section -->
                 <li><a href="updates.html">Daily Updates</a></li> <!-- for daily news -->
@@ -22,47 +22,32 @@
             </ul>
         </nav>
 
-        <main class="main">
-            <div class="task-list">
-                <p>Your Tasks</p>
-            </div>
-
-            <div class="avatar">
-
-            </div>
-
-            <div class="pet">
-
-            </div>
-
-            <div class="spotify-player">
-
-            </div>
-
-            <div class="time">
-
-            </div>
-
-            <div class="date">
-
-            </div>
-
-            <div class="weather">
-
-            </div>
-
-            <div class="progress-bar">
-
-            </div>
-
-            <div class="activity-log">
-
-            </div>
-
-            <div class="achievements">
-
-            </div>
-
+        <main>                
+                <div class="task-list">
+                    <h2>Your Tasks</h2>
+                    <ul>
+                        <li><label><input type="checkbox"> Finish CSS Grid</label></li>
+                        <li><label><input type="checkbox"> Refine Application</label></li>
+                        <li><label><input type="checkbox"> My Boyfriend is the Best</label></li>
+                        <li><label><input type="checkbox"> Add Item...</label></li>
+                    </ul>
+                </div>
+                <div class="avatar"><img src="#" alt="user profile picture"></div>
+                <div class="pet">
+                    <video class="pet-clip" autoplay loop muted playsinline>
+                        <source src="#" type="video/mp4">
+                    </video>
+                </div>
+                <div class="spotify-player">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0J7zb2oc4MVz9xNJQje6jD?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                    </iframe>
+                </div>
+                <div class="time" id="timeDisplay"></div>
+                <div class="date"></div>
+                <div class="weather"></div>
+                <div class="progress-bar"></div>
+                <div class="activity-log"></div>
+                <div class="achievements"></div>
         </main>
 
         <footer class="footer">
