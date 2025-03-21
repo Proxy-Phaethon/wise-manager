@@ -1,0 +1,110 @@
+.body {
+    background-color: black;
+}
+
+.header {
+    background: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation ul {
+    background-color: white;;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 10px;
+    margin: 0px;
+    gap: 20px;
+}
+
+.navigation a{
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.navigation a:hover {
+    background-color: #777;
+}
+
+.navigation li {
+    padding: 10px;
+}
+
+.main {
+    background-color: rgb 116, 250, 248;
+    color; white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.task-list {
+    background-color: rgb(116, 250, 248);
+    color: black;
+    border-radius: 5px;
+}
+
+.avatar {
+    background-color: white;
+    color: black;
+}
+
+.pet {
+    background-color: white;
+    color: black;
+}
+
+.spotify-player {
+    background-color: white;
+    color: black;
+}
+
+.time {
+    background-color: white;
+    color: black;
+}
+
+.date {
+    background-color: white;
+    color: black;
+}
+
+.weather {
+    background-color: white;
+    color: black;
+}
+
+.progress-bar {
+    background-color: white;
+    color: black;
+}
+
+.activity-log {
+    background-color: white;
+    color: black;
+}
+
+.achievements {
+    background-color: white;
+    color: black;
+}
+
+.footer {
+    background: white;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
