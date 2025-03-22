@@ -1,10 +1,12 @@
 html {
-    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
     font-family: 'Courier New', Courier, monospace;
-    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 header {
@@ -55,14 +57,15 @@ main {
     width: 100%;
     grid-template-areas:
     "task-list spotify-player time"
-    "task-list progress-bar date"
-    "task-list . weather"
+    "task-list progress-bar ."
+    "task-list . ."
     "task-list . pet"
     "profile activity-log achievements";
     gap: 20px;
     padding: 20px;
     background-color: black;
     color: white;
+    overflow-x: hidden;
 }
 
 .task-list { grid-area: task-list; }
@@ -70,8 +73,8 @@ main {
 .pet { grid-area: pet; }
 .spotify-player { grid-area: spotify-player; }
 .time { grid-area: time; }
-.date { grid-area: date; }
-.weather { grid-area: weather; }
+.date { grid-area: time; }
+.weather { grid-area: time; }
 .progress-bar { grid-area: progress-bar; }
 .activity-log { grid-area: activity-log; }
 .achievements { grid-area: achievements; }
@@ -132,6 +135,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    justify-self: start;
     padding: 20px;
 }
 
@@ -141,6 +145,33 @@ main {
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid white;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+.user-info h2,
+.user-info h3,
+.user-info p {
+    margin: 2px 0;
+}
+
+.font {
+    font-style:italic;
+}
+
+.top-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
 .time {
@@ -156,6 +187,51 @@ main {
     max-height: 30px;
     align-content: center;
     justify-content: center;
+}
+
+.date {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    width: fit-content;
+    min-width: 100px;
+    max-height: 30px;
+    align-content: center;
+    justify-content: center;
+}
+
+.weather {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    width: fit-content;
+    min-width: 100px;
+    max-height: 30px;
+    align-content: center;
+    justify-content: center;
+}
+
+.pet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.pet-clip {
+    max-height: 150px;
+    max-width: 300px;
+    border-radius: 10px;
+    object-fit: cover;
 }
 
 footer {
