@@ -62,3 +62,126 @@ async function updateWeather() {
 }
 
 document.addEventListener("DOMContentLoaded", updateWeather);
+
+//progress bar progress
+function updateProgress() {
+    const tasks = document.querySelectorAll(".task-checkbox");
+    const completedTasks = document.querySelectorAll(".task-checkbox:checked").length;
+    const totalTasks = tasks.length;
+
+    let progress = totalTasks > 0 ? (completedTasks / totalTasks) * 100 : 0;
+
+    document.getElementById("taskProgress").value = progress;
+    document.getElementById("progressText").textContent = `${Math.round(progress)}%` ;
+}
+
+document.querySelectorAll(".task-checkbox").forEach(task => {
+    task.addEventListener("change", updateProgress);
+});
+
+updateProgress ();
+
+//calendar
+const calendarGrid = document.getElementById("calendarGrid");
+const currentMonthYear = document.getElementById("monthYear");
+const prevMonthBtn = document.getElementById("prevMonth");
+const nextMonthBtn = document.getElementById("nextMonth");
+
+let currentDate = new Date();
+
+function renderCalendar() {
+    calendarGrid.innerHTML = ""; 
+
+    const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay();
+    const lastDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+
+    currentMonthYear.textContent = currentDate.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+
+    const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    weekdays.forEach(day => {
+        let dayLabel = document.createElement("div");
+        dayLabel.classList.add("day-label");
+        dayLabel.textContent = day;
+        calendarGrid.appendChild(dayLabel);
+    });
+
+    for (let i = 0; i < firstDay; i++) {
+        let emptyCell = document.createElement("div");
+        emptyCell.classList.add("empty-day");
+        calendarGrid.appendChild(emptyCell);
+    }
+
+    for (let day = 1; day <= lastDate; day++) {
+        let dayCell = document.createElement("div");
+        dayCell.classList.add("calendar-day");
+        dayCell.textContent = day;
+
+        let today = new Date();
+        if (day === today.getDate() && currentDate.getMonth() === today.getMonth() && currentDate.getFullYear() === today.getFullYear()) {
+            dayCell.classList.add("today");
+        }
+
+        calendarGrid.appendChild(dayCell);
+    }
+}
+
+prevMonthBtn.addEventListener("click", () => {
+    currentDate.setMonth(currentDate.getMonth() - 1);
+    renderCalendar();
+});
+nextMonthBtn.addEventListener("click", () => {
+    currentDate.setMonth(currentDate.getMonth() + 1);
+    renderCalendar();
+});
+
+document.addEventListener("DOMContentLoaded", renderCalendar);
+
+//pomodoro timer
+document.addEventListener("DOMContentLoaded", function () {
+    const timerDisplay = document.getElementById("timer-display");
+    const startBtn = document.getElementById("start-btn");
+
+    let timeLeft = 25 * 60;
+    let breakTime = 5 * 60;
+    let isBreak = false;
+    let timerInterval;
+
+    function updateDisplay(time) {
+        let minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+        timerDisplay.textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    }
+
+    function startTimer(duration, onEnd) {
+        clearInterval(timerInterval);
+        let currentTime = duration;
+
+        startBtn.disabled = true;
+
+        timerInterval = setInterval(() => {
+            updateDisplay(currentTime);
+            currentTime--;
+
+            if (currentTime < 0) {
+                clearInterval(timerInterval);
+                onEnd();
+            }
+        }, 1000);
+    }
+
+    startBtn.addEventListener("click", () => {
+        isBreak = false;
+        startTimer(timeLeft, () => {
+            isBreak = true;
+            startBtn.textContent = "Break Time";
+            startBtn.disabled = true;
+            startTimer(breakTime, () => {
+                startBtn.textContent = "Start";
+                startBtn.disabled = false;
+                updateDisplay(timeLeft);
+            });
+        });
+    });
+
+    updateDisplay(timeLeft);
+});
