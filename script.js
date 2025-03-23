@@ -72,7 +72,6 @@ function updateProgress() {
     let progress = totalTasks > 0 ? (completedTasks / totalTasks) * 100 : 0;
 
     document.getElementById("taskProgress").value = progress;
-    document.getElementById("progressText").textContent = `${Math.round(progress)}%` ;
 }
 
 document.querySelectorAll(".task-checkbox").forEach(task => {
@@ -185,3 +184,115 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateDisplay(timeLeft);
 });
+
+//calculator
+let currentInput = "";
+let operator = "";
+let previousInput = "";
+
+function appendNumber(num) {
+    currentInput += num;
+    updateDisplay();
+}
+
+function appendDecimal() {
+    if (!currentInput.includes(".")) { 
+        currentInput += ".";
+        updateDisplay();
+    }
+}
+
+function appendOperator(op) {
+    if (op === ".") {
+        appendDecimal();
+        return;
+    }
+    setOperator(op);
+}
+
+function setOperator(op) {
+    if (currentInput === "") return;
+    if (previousInput !== "") {
+        calculateResult();
+    }
+    operator = op;
+    previousInput = currentInput;
+    currentInput = "";
+}
+
+function calculate() {
+    calculateResult();
+}
+
+function calculateResult() {
+    if (previousInput === "" || currentInput === "") return;
+    try {
+        currentInput = eval(previousInput + operator + currentInput).toString();
+    } catch (error) {
+        currentInput = "Error"; 
+    }
+    operator = "";
+    previousInput = "";
+    updateDisplay();
+}
+
+function clearDisplay() {
+    currentInput = "";
+    operator = "";
+    previousInput = "";
+    updateDisplay();
+}
+
+function updateDisplay() {
+    document.getElementById("calc-display").innerText = currentInput || "0";
+}
+
+//for chat
+document.getElementById("chatboxSend").addEventListener("click", sendMessage);
+document.getElementById("chatboxInput").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+});
+
+function sendMessage() {
+    let inputField = document.getElementById("chatboxInput");
+    let message = inputField.value.trim();
+    
+    if (message !== "") {
+        let messageContainer = document.getElementById("chatboxMessages");
+        let messageElement = document.createElement("div");
+        messageElement.classList.add("chat-message");
+        messageElement.textContent = message;
+
+        messageContainer.appendChild(messageElement);
+        inputField.value = ""; 
+
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+    }
+}
+
+//placeholder animation below progress bar - update it to cute pixel animation later
+const canvas = document.getElementById("pixelCanvas");
+const ctx = canvas.getContext("2d");
+
+let x = 10, y = 10;
+let dx = 2, dy = 2;
+const boxSize = 10;
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "lime";
+    ctx.fillRect(x, y, boxSize, boxSize);
+
+    x += dx;
+    y += dy;
+
+    if (x + boxSize > canvas.width || x < 0) dx = -dx;
+    if (y + boxSize > canvas.height || y < 0) dy = -dy;
+
+    requestAnimationFrame(animate);
+}
+
+animate();

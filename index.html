@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     </head>
     <body>
         <header>
@@ -54,22 +55,24 @@
                     <div class="date" id="dateDisplay"></div>
                     <div class="weather" id="weatherDisplay"></div>
                 </div>
-                <div class="progress-bar">
-                    <progress id="taskProgress" value="0" max="100"></progress>
-                    <span id="progressText">0%</span>
-                </div>
-                <div class="calendar-container">
-                    <div class="calendar">
-                        <div class="calendar-header">
-                            <button id="prevMonth">&#9665;</button>
-                            <h2 id="monthYear"></h2>
-                            <button id="nextMonth">&#9655;</button>
-                        </div>
-                        <div class="calendar-days">
-                            <div id="calendarGrid"></div>
-                        </div>
+                <div class="progress-container">    
+                    <div class="progress-bar">
+                        <progress id="taskProgress" value="0" max="100"></progress>
                     </div>
+                    <div class="pixel-animation-container">
+                        <canvas id="pixelCanvas" width="400" height="200"></canvas>
+                    </div>
+                </div>                
+            <div class="calendar-container">
+                <div class="calendar">
+                    <div class="calendar-header">
+                        <button id="prevMonth">&#9665;</button>
+                        <h2 id="monthYear"></h2>
+                        <button id="nextMonth">&#9655;</button>
+                    </div>
+                    <div id="calendarGrid"></div>
                 </div>
+            </div>            
                 <div class="notes">
                     <div class="notes-box">
                         <textarea id="notesArea" placeholder="Write your notes here..."></textarea>
@@ -79,9 +82,61 @@
                     <div id="timer-display">25:00</div>
                     <button id="start-btn">Start</button>
                 </div>
-                <div class="quick-access"></div>
-                <div class="chatbox"></div>
-                <div class="calculator"></div>
+                <div class="quick-access">
+                    <h2>Quick Access</h2>
+                    <div class="fuckall">
+                        <div class="icon-row-1">
+                            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                            <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="https://mail.google.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                            <a href="https://drive.google.com" target="_blank"><i class="fab fa-google-drive"></i></a>
+                        </div>
+                        <div class="icon-row-2">
+                            <a href="https://www.discord.com" target="_blank"><i class="fab fa-discord"></i></a>
+                            <a href="https://www.github.com" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.reddit.com" target="_blank"><i class="fab fa-reddit"></i></a>
+                            <a href="https://pinterest.com" target="_blank"><i class="fab fa-pinterest"></i></a>
+                            <a href="https://trello.com" target="_blank"><i class="fab fa-trello"></i></a>
+                            <a href="https://web.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://www.paypal.com" target="_blank"><i class="fab fa-paypal"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatbox">
+                    <div class="chatbox-header">
+                        <h2>Messages</h2>
+                    </div>
+                    <div class="chatbox-messages" id="chatboxMessages"></div>
+                    <div class="chatbox-input">
+                        <input type="text" id="chatboxInput" placeholder="Type a message...">
+                        <button id="chatboxSend">Send</button>
+                    </div>
+                </div>
+                <div class="calculator-box">
+                    <div class="calculator-display" id="calc-display">0</div>
+                    <div class="calculator-buttons">
+                        <button class="calc-btn" onclick="clearDisplay()">C</button>
+                        <button class="calc-btn" onclick="appendNumber(7)">7</button>
+                        <button class="calc-btn" onclick="appendNumber(8)">8</button>
+                        <button class="calc-btn" onclick="appendNumber(9)">9</button>
+                        <button class="calc-btn" onclick="appendOperator('/')">/</button>
+                        <button class="calc-btn" onclick="appendNumber(4)">4</button>
+                        <button class="calc-btn" onclick="appendNumber(5)">5</button>
+                        <button class="calc-btn" onclick="appendNumber(6)">6</button>
+                        <button class="calc-btn" onclick="appendOperator('*')">*</button>
+                        <button class="calc-btn" onclick="appendNumber(1)">1</button>
+                        <button class="calc-btn" onclick="appendNumber(2)">2</button>
+                        <button class="calc-btn" onclick="appendNumber(3)">3</button>
+                        <button class="calc-btn" onclick="appendOperator('-')">-</button>
+                        <button class="calc-btn" onclick="appendNumber(0)">0</button>
+                        <button class="calc-btn" onclick="appendOperator('.')">.</button>
+                        <button class="calc-btn" onclick="calculate()">=</button>
+                        <button class="calc-btn" onclick="appendOperator('+')">+</button>
+                    </div>
+                </div>
         </main>
 
         <footer class="footer">
