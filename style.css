@@ -637,3 +637,98 @@ footer {
     align-content: center;
     justify-content: center;
 }
+
+/* daily updates page */
+.updates-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.daily-updates {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 800px;
+}
+
+.post-list {
+    flex-grow: 1;
+    min-width: 500px;
+    background: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.update-box {
+    height: 250px;
+    width: 750px;
+    background: #222;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.update-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.update-author {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 1px;
+}
+
+.update-timestamp {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.update-description {
+    font-size: 1rem;
+    color: #ddd;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-list-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.post-list-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.post-item {
+    font-size: 1rem;
+    padding: 8px 0;
+    border-bottom: 1px solid #555;
+}
+
+.post-item:last-child {
+    border-bottom: none;
+}
+
+.post-date {
+    color: #bbb;
+    font-weight: bold;
+}
+
+.post-author {
+    color: #888;
+    font-style: italic;
+}
+
+.post-title {
+    color: #ddd;
+}

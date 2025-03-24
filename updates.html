@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>WISE</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link ref="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     </head>
     <body>
-        <header class="header">
+        <header>
             <h1>WISE</h1>
         </header>
 
-        <nav class="navigation">
+        <nav>
             <ul>
                 <li><a href="index.html">Control Panel</a></li> <!-- control panel showing task list, avatar, pet, spotify player, time, date, weather, progress bar for daily tasks, activity log, and a cute little awards section -->
                 <li><a href="updates.html">Daily Updates</a></li> <!-- for daily news -->
@@ -21,6 +22,205 @@
                 <li><a href="calendar.html">Calendar</a></li> <!-- calendar with scheduling system -->
             </ul>
         </nav>
+
+        <main>
+            <div class="updates-container">
+                <div class="daily-updates">
+                    <div class="update-box">
+                        <h3 class="update-title">Weekly Stand-up: Priorities for the Week</h3>
+                        <p class="update-author">By Yuki Tsukumo</p>
+                        <p class="update-timestamp">March 23, 2025 - 09:15</p>
+                        <p class="update-description">
+                            Kickstarting the week with a clear roadmap! In today's stand-up, we outlined key priorities for Project WISE:</br>
+                            - Final bug fixes before the next beta update.</br>
+                            - Marketing team to prepare for the upcoming launch campaign.</br>
+                            - Security audit results to be reviewed (thanks, Liam!).</br>
+                            - Client demo scheduled for Friday - let's make sure we're ready!</br>
+                        </p>
+                    </div>
+                    <div class="update-box">
+                        <h3 class="update-title">Bug Fix Roundup: Latest Issues & Resolutions</h3>
+                        <p class="update-author">By Alex Carter</p>
+                        <p class="update-timestamp">March 23, 2025 - 14:30</p>
+                        <p class="update-description">
+                            Another day, another set of bug squashes! The dev team tackled some major issues:</br>
+                            - Fixed a recurring logout bug affecting session persistence.</br>
+                            - Resolved UI glitch when switching between task views.</br>
+                            - Optimized backend queries - dashboard loads 30% faster now!</br>
+                            - Issue with task assignments disappearing - finally fixed</br>
+                        </p>
+                    </div>
+                    <div class="update-box">
+                        <h3 class="update-title">User Interface Updates: New Dark Mode Implemented</h3>
+                        <p class="update-author">By Priya Shah</p>
+                        <p class="update-timestamp">March 22, 2025 - 06:45</p>
+                        <p class="update-description">
+                            Good news for the night owls, Wise now has a fully functional Dark Mode :) </br>
+                            - Toggle option added under Settings > Display. </br>
+                            - Reduced glare and improved contrast for better readability. </br>
+                            - Minor color tweaks to maintain brand consistency. </br>
+                            Test it out and let me know is anything looks off - feedback is appreciated </br>
+                        </p>
+                    </div>
+                    <div class="update-box">
+                        <h3 class="update-title">Security Audit: Encruption Testing Phase Completed</h3>
+                        <p class="update-author">By Liam Novak</p>
+                        <p class="update-timestamp">March 22, 2025 - 10:10</p>
+                        <p class="update-description">
+                            The encryption review is done, and results are looking solid: </br>
+                            - Data encryption at rest & in transit meets compliance standards </br>
+                            - Multi-factor authentication improvements successfully implemented </br>
+                            - Some minor vulnerabilities found in API calls - patching these today </br>
+                            Next step: penetration testing next week. Stay vigilant, team! </br>
+                        </p>
+                    </div>
+                    <div class="update-box">
+                        <h3 class="update-title">Investor Meeting Recap: Positive Outlook for Wise</h3>
+                        <p class="update-author">By Yuki Tsukumo</p>
+                        <p class="update-timestamp">March 21, 2025 - 16:45</p>
+                        <p class="update-description">
+                            Just wrapped up a high-stakes meeting with investors, and Wise is making waves! </br>
+                            - They're impressed with our progress and market potential </br>
+                            - Questions were raised about scalability - something we'll focus on </br>
+                            - Next funding round looking promising if we hit key milestones </br>
+                            Great job, everyone! Let's keep up the momentum. </br>
+                        </p>
+                    </div>
+                </div>
+                <div class="post-list">
+                    <div class="post-list">
+                        <h2 class="post-list-title">All Updates</h2>
+                        <ul class="post-list-items">
+                            <li class="post-item">
+                                <span class="post-date">March 23, 2025</span> - 
+                                <span class="post-author">Yuki Tsukumo</span> - 
+                                <span class="post-title">Weekly Stand-up: Priorities for the Week</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 23, 2025</span> - 
+                                <span class="post-author">Alex Carter</span> - 
+                                <span class="post-title">Bug Fix Roundup: Latest Issues & Resolutions</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 22, 2025</span> - 
+                                <span class="post-author">Priya Shah</span> - 
+                                <span class="post-title">User Interface Updates: New Dark Mode Implemented</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 22, 2025</span> - 
+                                <span class="post-author">Liam Novak</span> - 
+                                <span class="post-title">Security Audit: Encryption Testing Phase Completed</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 21, 2025</span> - 
+                                <span class="post-author">Yuki Tsukumo</span> - 
+                                <span class="post-title">Investor Meeting Recap: Positive Outlook for Wise</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 21, 2025</span> - 
+                                <span class="post-author">Elena Moreau</span> - 
+                                <span class="post-title">Marketing Update: Social Media Rollout Begins</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 20, 2025</span> - 
+                                <span class="post-author">Daniel Liee</span> - 
+                                <span class="post-title">Beta Testers Feedback: Key Pain Points Identified</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 20, 2025</span> - 
+                                <span class="post-author">Sofia Alvarez</span> - 
+                                <span class="post-title">Backend Performance: Server Optimization in Progress</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 19, 2025</span> - 
+                                <span class="post-author">Yuki Tsukumo</span> - 
+                                <span class="post-title">Milestone Check-In: On Track for April Launch?</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 19, 2025</span> - 
+                                <span class="post-author">Kai Donovan</span> - 
+                                <span class="post-title">Integration Testing: Wise x Slack Functionality Update</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 18, 2025</span> - 
+                                <span class="post-author">Mei Lin</span> - 
+                                <span class="post-title">User Analytics: Engageent Rates & Feature Adoption</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 18, 2025</span> - 
+                                <span class="post-author">Alex Carter</span> - 
+                                <span class="post-title">Finalizing Wise's Automated Task Scheduling</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 17, 2025</span> - 
+                                <span class="post-author">Priya Shah</span> - 
+                                <span class="post-title">UI/UX Update: Streamlined Navigation Menus</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 17, 2025</span> - 
+                                <span class="post-author">Yuki Tsukumo</span> - 
+                                <span class="post-title">Client Demo Scheduled: Preparation Checklist</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 16, 2025</span> - 
+                                <span class="post-author">Daniel Lee</span> - 
+                                <span class="post-title">Data Privacy Compliance: GDPR Audit Review</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 16, 2025</span> - 
+                                <span class="post-author">Elena Moreau</span> - 
+                                <span class="post-title">Blog Post Published: "How Wise Simplifies Workflow"</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 14, 2025</span> - 
+                                <span class="post-author">Yuki Tsukumo</span> - 
+                                <span class="post-title">Team Feedback Session: Adjusting Roadmpa</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 14, 2025</span> - 
+                                <span class="post-author">Alex Carter</span> - 
+                                <span class="post-title">Beta Version 1.5 Released for testing</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 13, 2025</span> - 
+                                <span class="post-author">Kai Donovan</span> - 
+                                <span class="post-title">Wise API Now Supports Third-Party Plugins</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 13, 2025</span> - 
+                                <span class="post-author">Priya Shah</span> - 
+                                <span class="post-title">Final Color Palette & Theme Options Approved</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 12, 2025</span> - 
+                                <span class="post-author">Mei Lin</span> - 
+                                <span class="post-title">Survey Results: What Users Want in a Productivity App</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 12, 2025</span> - 
+                                <span class="post-author">Yuki Tsukumo</span> - 
+                                <span class="post-title">Partnership Meeting: Potential Collaborations</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 11, 2025</span> - 
+                                <span class="post-author">Daniel Lee</span> - 
+                                <span class="post-title">Code Refactoring: Performance Boost Achieved</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 10, 2025</span> - 
+                                <span class="post-author">Elena Moreau</span> - 
+                                <span class="post-title">Ad Campaign Launching Next Week!</span>
+                            </li>
+                            <li class="post-item">
+                                <span class="post-date">March 9, 2025</span> - 
+                                <span class="post-author">Yuki Tsukumo</span> - 
+                                <span class="post-title">End-of-Sprint Review: Key Takeaways</span>
+                            </li>
+                        </ul>
+                    </div>                    
+                </div>
+            </div>                               
+        </main>
 
         <footer class="footer">
             <p>&copy; 2025 WISE</p>
