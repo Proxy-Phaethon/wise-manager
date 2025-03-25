@@ -14,6 +14,7 @@
 
         <nav>
             <ul>
+                <li><a href="landing.html">Home</a></li> <!-- landing page for wise -->
                 <li><a href="index.html">Control Panel</a></li> <!-- control panel showing task list, avatar, pet, spotify player, time, date, weather, progress bar for daily tasks, activity log, and a cute little awards section -->
                 <li><a href="updates.html">Daily Updates</a></li> <!-- for daily news -->
                 <li><a href="forms.html">Request Forms</a></li> <!-- for leave requests, item requests, etc. -->
@@ -23,7 +24,10 @@
             </ul>
         </nav>
 
-        <main>                
+        <main class="container">       
+            <div class="progress-container">
+                <div class="progress-bar" id="taskProgress"></div>
+            </div>   
                 <div class="task-list">
                     <h2>Your Tasks</h2>
                     <ul>
@@ -42,10 +46,6 @@
                         <li><label><input type="checkbox" class="task-checkbox"> Plan and execute Wise's launch event</label></li>
                         <li><label><input type="checkbox" class="task-checkbox"> Review and approve new features for Wise's platform</label></li>
                         <li><label><input type="checkbox" class="task-checkbox"> Host Friday team meeting to discuss progress and upcoming tasks</label></li>
-                        <li><label><input type="checkbox" class="task-checkbox"> Conduct training session for new team members on Wise</label></li>
-                        <li><label><input type="checkbox" class="task-checkbox"> Check financial reports and approve budget allocations</label></li>
-                        <li><label><input type="checkbox" class="task-checkbox"> Prepare for client demo & finalize presentation slides</label></li>
-                        <li><label><input type="checkbox" class="task-checkbox"> Meet with investors interested in Wise's expansion</label></li>
                         <li><label><input type="checkbox" class="task-checkbox"> Add Item...</label></li>
                     </ul>
                 </div>
@@ -57,47 +57,20 @@
                         <p class="font">About Me....</p>
                     </div>
                 </div>
-                <div class="pet">
-                    <video class="pet-clip" autoplay loop muted playsinline>
-                        <source src="pet-video.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="spotify-player">
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0J7zb2oc4MVz9xNJQje6jD?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-                    </iframe>
-                </div>
                 <div class="top-right">
                     <div class="time" id="timeDisplay"></div>
                     <div class="date" id="dateDisplay"></div>
                     <div class="weather" id="weatherDisplay"></div>
                 </div>
-                <div class="progress-container">    
-                    <div class="progress-bar">
-                        <progress id="taskProgress" value="0" max="100"></progress>
-                    </div>
-                    <div class="pixel-animation-container">
-                        <canvas id="pixelCanvas" width="400" height="200"></canvas>
-                    </div>
+                <div class="spotify-player">
+                    <iframe src="https://open.spotify.com/embed/playlist/0J7zb2oc4MVz9xNJQje6jD?utm_source=generator&theme=0" loading="lazy" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+                    </iframe>
                 </div>                
-            <div class="calendar-container">
-                <div class="calendar">
-                    <div class="calendar-header">
-                        <button id="prevMonth">&#9665;</button>
-                        <h2 id="monthYear"></h2>
-                        <button id="nextMonth">&#9655;</button>
-                    </div>
-                    <div id="calendarGrid"></div>
-                </div>
-            </div>            
-                <div class="notes">
-                    <div class="notes-box">
-                        <textarea id="notesArea" placeholder="Write your notes here..."></textarea>
-                    </div>
-                </div>
-                <div class="pomodoro-timer">
-                    <div id="timer-display">25:00</div>
-                    <button id="start-btn">Start</button>
-                </div>
+                <div class="cat">
+                    <video class="cat-clip" autoplay loop muted playsinline>
+                        <source src="pet-video.mp4" type="video/mp4">
+                    </video>
+                </div>                                    
                 <div class="quick-access">
                     <h2>Quick Access</h2>
                     <div class="fuckall">
@@ -129,30 +102,25 @@
                     <div class="chatbox-input">
                         <input type="text" id="chatboxInput" placeholder="Type a message...">
                         <button id="chatboxSend">Send</button>
-                    </div>
+                    </div>                 
                 </div>
-                <div class="calculator-box">
-                    <div class="calculator-display" id="calc-display">0</div>
-                    <div class="calculator-buttons">
-                        <button class="calc-btn" onclick="clearDisplay()">C</button>
-                        <button class="calc-btn" onclick="appendNumber(7)">7</button>
-                        <button class="calc-btn" onclick="appendNumber(8)">8</button>
-                        <button class="calc-btn" onclick="appendNumber(9)">9</button>
-                        <button class="calc-btn" onclick="appendOperator('/')">/</button>
-                        <button class="calc-btn" onclick="appendNumber(4)">4</button>
-                        <button class="calc-btn" onclick="appendNumber(5)">5</button>
-                        <button class="calc-btn" onclick="appendNumber(6)">6</button>
-                        <button class="calc-btn" onclick="appendOperator('*')">*</button>
-                        <button class="calc-btn" onclick="appendNumber(1)">1</button>
-                        <button class="calc-btn" onclick="appendNumber(2)">2</button>
-                        <button class="calc-btn" onclick="appendNumber(3)">3</button>
-                        <button class="calc-btn" onclick="appendOperator('-')">-</button>
-                        <button class="calc-btn" onclick="appendNumber(0)">0</button>
-                        <button class="calc-btn" onclick="appendOperator('.')">.</button>
-                        <button class="calc-btn" onclick="calculate()">=</button>
-                        <button class="calc-btn" onclick="appendOperator('+')">+</button>
-                    </div>
+                <div class="recent-updates">
+                    <h2>Recent Updates</h2>
+                    <ul id="updates-list">
+                        <li><a href="updates.html#update-1">Weekly Stand-up: Priorities for the Week</a></li>
+                        <li><a href="updates.html#update-2">Bug Fix Roundup: Latest Issues & Resolutions</a></li>
+                        <li><a href="updates.html#update-3">User Interface Updates: New Dark Mode Implemented</a></li>
+                    </ul>
+                    <a href="updates.html" class="see-all">See All Updates</a>
                 </div>
+                <div class="activity-log">
+                    <h2>Activity Log</h2>
+                    <ul id="activityList">
+                        <li><span class="log-time">12:45 PM</span> - Logged in</li>
+                        <li><span class="log-time">12:50 PM</span> - Viewed Dashboard</li>
+                        <li><span class="log-time">1:10 PM</span> - Updated Profile</li>
+                    </ul>
+                </div>                
         </main>
 
         <footer class="footer">
