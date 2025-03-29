@@ -1,22 +1,22 @@
-# Wise 🧠✨  
+# Wise  
 *A lightweight, intuitive project management platform.*  
 
-## 📌 Overview  
+## Overview  
 Wise is a minimal yet powerful project management platform designed to streamline workflows and enhance productivity. Built with simplicity in mind, it offers an efficient way to manage tasks, collaborate, and track progress.  
 
-## 🚀 Features  
-- 📂 **Task & Project Management** – Organize projects with a clear, user-friendly interface.  
-- 📜 **Rich Text Editor** – Write and format notes seamlessly.  
-- 🗃️ **Data Persistence** – Save projects and tasks using MongoDB.  
-- 🔒 **User Authentication** – Secure access with login/signup functionality. *(Planned feature)*  
-- 📊 **Dashboard & Analytics** – Visualize productivity trends. *(Planned feature)*  
+## Features  
+- **Task & Project Management** – Organize projects with a clear, user-friendly interface.  
+- **Rich Text Editor** – Write and format notes seamlessly.  
+- **Data Persistence** – Save projects and tasks using MongoDB.  
+- **User Authentication** – Secure access with login/signup functionality. *(Planned feature)*  
+- **Dashboard & Analytics** – Visualize productivity trends. *(Planned feature)*  
 
-## 🛠️ Tech Stack  
+## Tech Stack  
 - **Front-end:** HTML, CSS, JavaScript  
 - **Back-end:** Node.js, Express.js  
 - **Database:** MongoDB  
 
-## 📂 Installation & Setup  
+## Installation & Setup  
 ### 1️⃣ Clone the Repository  
 ```sh
 git clone https://github.com/your-username/wise.git
@@ -36,19 +36,15 @@ PORT=5000
 ```sh
 node server.js
 ```
-The project will be available at **http://localhost:5000** 🚀  
 
-## 📌 Usage  
+## Usage  
 1. Open `index.html` in your browser for a local preview.  
 2. For full functionality, run the backend and connect MongoDB.  
 
-## 🏗️ Future Improvements  
-- ✅ Task Prioritization & Deadlines  
-- 📊 Productivity Analytics  
-- 🌍 Deployment & Hosting  
+## Future Improvements  
+- Task Prioritization & Deadlines  
+- Productivity Analytics  
+- Deployment & Hosting  
 
-## 🤝 Contributing  
+## Contributing  
 It's supposed to be a Master's project, but feel free to submit a pull request :) 
-
-## 📜 License  
-MIT License  
