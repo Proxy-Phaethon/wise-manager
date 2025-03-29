@@ -15,7 +15,7 @@
         <nav>
             <ul>
                 <li><a href="landing.html">Home</a></li> <!-- landing page for wise -->
-                <li><a href="index.html">Control Panel</a></li> <!-- control panel showing task list, avatar, pet, spotify player, time, date, weather, progress bar for daily tasks, activity log, and a cute little awards section -->
+                <li><a href="index.html">Dashboard</a></li> <!-- control panel showing task list, avatar, pet, spotify player, time, date, weather, progress bar for daily tasks, activity log, and a cute little awards section -->
                 <li><a href="updates.html">Daily Updates</a></li> <!-- for daily news -->
                 <li><a href="forms.html">Request Forms</a></li> <!-- for leave requests, item requests, etc. -->
                 <li><a href="editor.html">Editor</a></li> <!-- document editor -->
@@ -123,7 +123,7 @@
                             </li>
                             <li class="post-item">
                                 <span class="post-date">March 20, 2025</span> - 
-                                <span class="post-author">Daniel Liee</span> - 
+                                <span class="post-author">Daniel Lee</span> - 
                                 <span class="post-title">Beta Testers Feedback: Key Pain Points Identified</span>
                             </li>
                             <li class="post-item">
@@ -218,8 +218,23 @@
                             </li>
                         </ul>
                     </div>                    
-                </div>
-            </div>                               
+                </div>               
+            </div>
+            <div class="update-box new-update">
+                <h3 class="update-title">Add a New Update</h3>
+                <form id="update-form">
+                    <label for="update-title">Title:</label>
+                    <input type="text" id="update-title" name="update-title" required>
+                    
+                    <label for="update-author">Author:</label>
+                    <input type="text" id="update-author" name="update-author" required>
+                    
+                    <label for="update-description">Description:</label>
+                    <textarea id="update-description" name="update-description" rows="4" required></textarea>
+                    
+                    <button type="submit">Post Update</button>
+                </form>
+            </div>                            
         </main>
 
         <footer class="footer">
